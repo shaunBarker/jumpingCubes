@@ -11,13 +11,14 @@ void artificialIntelligence::takeATurn(){
     QPoint moveOnThis=findMaxPosition(findFlippablePoints());
     whereIAmPlaying->getBoardDie(moveOnThis.x(),moveOnThis.y())->aiClickedOnMe();
 }
+//This seems to be junk, no idea why it's here? Maybe left over from an original prototype?
+//QPoint artificialIntelligence::whereShouldIMove()
+//{
+//    QPoint iShouldMoveHere(0,0);
+//    return(iShouldMoveHere);
+//}
 
-QPoint artificialIntelligence::whereShouldIMove()
-{
-    QPoint iShouldMoveHere(0,0);
-    return(iShouldMoveHere);
-}
-
+//could this be an array instead of a vector? Need to check what's going on.
 std::vector<std::vector<int> > artificialIntelligence::findFlippablePoints(){
     std::vector<std::vector<int> > flippablePoints(whereIAmPlaying->getSize(), std::vector<int> (whereIAmPlaying->getSize(),0));
 
