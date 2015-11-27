@@ -75,7 +75,7 @@
     }
 
     //make this visible! GUI for the win
-    void Die::paintEvent(QPaintEvent *event)
+    void Die::paintEvent(QPaintEvent */*event unused*/)
     {
         QPainter painter(this);
         painter.setPen(m_currentTeam);
@@ -117,7 +117,7 @@
         }
 
     }
-    void Die::mousePressEvent(QMouseEvent *event){
+    void Die::mousePressEvent(QMouseEvent */*unused event*/){
         emit pressed(m_position);//I've been clicked on, alert everyone
     }
     void Die::aiClickedOnMe(){

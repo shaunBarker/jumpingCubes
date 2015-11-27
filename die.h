@@ -17,10 +17,10 @@ class Die : public QWidget
         QColor getTeamColour() const;
         QPoint getPoint() const;
         bool rollOver(int boardSize) const;
-        void paintEvent(QPaintEvent *event);
+        void paintEvent(QPaintEvent *);
         void reset();
         void changeColour(QColor newColour);
-        void mousePressEvent(QMouseEvent *event);
+        void mousePressEvent(QMouseEvent *);
         void aiClickedOnMe();
 
     private:
