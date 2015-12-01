@@ -70,6 +70,7 @@ void board::runResize(int newSize){
 
 //runs the resize function above
 void board::resetBoard(){
+    aiTurn=false;
     m_currentTurn=Qt::red;
     resizeBoard(m_changedNewBoardSize);
 }
@@ -215,12 +216,6 @@ int board::dieHit(QPoint diePosition){
         } else {
             aiTurn=true;
             emit tellAiToTakeATurn();
-        }
-
-        if(m_currentTurn==Qt::red){
-           m_currentTurn=Qt::blue;
-        } else {
-            m_currentTurn=Qt::red;
         }
     }
     return(0);

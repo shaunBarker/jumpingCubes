@@ -1,9 +1,12 @@
 Known Bugs:
 
+
+Fixed Bugs:
  - User becomes blue colour and AI doesn't initialise
 	 - Seems to occur after the AI wins a game
 	 - the game after this 'game' doesn't suffer the same problem
 	 - the problem then occurs again after a proper game has occured
+
 
 User Interface
  - it sucks
