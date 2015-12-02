@@ -13,6 +13,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->boardLayout->addWidget(newBoard);
     QObject::connect(ui->spinBoardSize,SIGNAL(valueChanged(int)),newBoard,SLOT(runResize(int)));
     QObject::connect(ui->resetButton,SIGNAL(clicked()),newBoard,SLOT(resetBoard()));
+    QObject::connect(this,SIGNAL(resetBoard()),newBoard,SLOT(resetBoard()));
     QObject::connect(newBoard,SIGNAL(tellAiToTakeATurn()),newAI,SLOT(takeATurn()));
 }
 
@@ -20,4 +21,9 @@ MainWindow::~MainWindow()
 {
     delete ui;//when things need to die, we want to make sure no one sees anything
 
+}
+
+void MainWindow::on_actionRestart_triggered()
+{
+    emit resetBoard();
 }

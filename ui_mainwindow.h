@@ -18,6 +18,7 @@
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
+#include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpinBox>
@@ -31,6 +32,8 @@ QT_BEGIN_NAMESPACE
 class Ui_MainWindow
 {
 public:
+    QAction *actionRestart;
+    QAction *actionExit;
     QWidget *centralWidget;
     QGridLayout *gridLayout_2;
     QGroupBox *controlBox;
@@ -43,12 +46,17 @@ public:
     QStatusBar *statusBar;
     QToolBar *mainToolBar;
     QMenuBar *menuBar;
+    QMenu *menuMain_Menu;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
         MainWindow->resize(570, 391);
+        actionRestart = new QAction(MainWindow);
+        actionRestart->setObjectName(QStringLiteral("actionRestart"));
+        actionExit = new QAction(MainWindow);
+        actionExit->setObjectName(QStringLiteral("actionExit"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         gridLayout_2 = new QGridLayout(centralWidget);
@@ -106,9 +114,16 @@ public:
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
         menuBar->setGeometry(QRect(0, 0, 570, 25));
+        menuMain_Menu = new QMenu(menuBar);
+        menuMain_Menu->setObjectName(QStringLiteral("menuMain_Menu"));
         MainWindow->setMenuBar(menuBar);
 
+        menuBar->addAction(menuMain_Menu->menuAction());
+        menuMain_Menu->addAction(actionRestart);
+        menuMain_Menu->addAction(actionExit);
+
         retranslateUi(MainWindow);
+        QObject::connect(actionExit, SIGNAL(triggered()), MainWindow, SLOT(close()));
 
         QMetaObject::connectSlotsByName(MainWindow);
     } // setupUi
@@ -116,9 +131,12 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
+        actionRestart->setText(QApplication::translate("MainWindow", "Restart", 0));
+        actionExit->setText(QApplication::translate("MainWindow", "Exit", 0));
         controlBox->setTitle(QApplication::translate("MainWindow", "Controls", 0));
         label_3->setText(QApplication::translate("MainWindow", "Grid Width:", 0));
         resetButton->setText(QApplication::translate("MainWindow", "Restart", 0));
+        menuMain_Menu->setTitle(QApplication::translate("MainWindow", "Main Menu", 0));
     } // retranslateUi
 
 };

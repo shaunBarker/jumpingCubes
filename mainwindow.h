@@ -19,6 +19,12 @@ public:
     
 private:
     Ui::MainWindow *ui;
+
+signals:
+    void resetBoard();
+
+private slots:
+    void on_actionRestart_triggered();
 };
 
 #endif // MAINWINDOW_H
