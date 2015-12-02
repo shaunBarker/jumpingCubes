@@ -42,7 +42,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(570, 391);
+        MainWindow->resize(400, 400);
         actionRestart = new QAction(MainWindow);
         actionRestart->setObjectName(QStringLiteral("actionRestart"));
         actionExit = new QAction(MainWindow);
@@ -70,7 +70,7 @@ public:
         MainWindow->addToolBar(Qt::TopToolBarArea, mainToolBar);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 570, 25));
+        menuBar->setGeometry(QRect(0, 0, 400, 25));
         menuMain_Menu = new QMenu(menuBar);
         menuMain_Menu->setObjectName(QStringLiteral("menuMain_Menu"));
         MainWindow->setMenuBar(menuBar);
