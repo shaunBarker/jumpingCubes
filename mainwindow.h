@@ -22,9 +22,11 @@ private:
 
 signals:
     void resetBoard();
+    void resizeRequest(int newSize);
 
 private slots:
     void on_actionRestart_triggered();
+    void on_actionGrid_Size_triggered();
 };
 
 #endif // MAINWINDOW_H
