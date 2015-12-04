@@ -3,6 +3,7 @@
 #include "die.h"
 #include "artificialintelligence.h"
 #include "qinputdialog.h"
+#include "qmessagebox.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -32,11 +33,22 @@ void MainWindow::on_actionRestart_triggered()
 
 void MainWindow::on_actionGrid_Size_triggered()
 {
+    bool ok;
+    int arbitraryMinSize=2;
+    int arbitraryMaxSize=20;
     QString description = "Change grid size";
     QString request = "Enter the requested grid size";
-    QString text = QInputDialog::getText(this,
-            description, request, QLineEdit::Normal);
-    int changedValue = text.toInt();
-    emit resizeRequest(changedValue);
-    emit resetBoard();
+    //QString text = QInputDialog::getText(this,description, request, QLineEdit::Normal);
+    int changedValue = QInputDialog::getInt(this,
+            description, request, QLineEdit::Normal,arbitraryMinSize,arbitraryMaxSize,1,&ok);
+    if(ok and changedValue>arbitraryMinSize and changedValue<=arbitraryMaxSize){
+        //int changedValue = text.toInt();
+        emit resizeRequest(changedValue);
+        emit resetBoard();
+    }else if(ok){
+        QMessageBox::information(
+            this,
+            tr("Invalid Entry"),
+            tr("The board is only allowed to be between 2 and 20 dice wide.") );
+    }
 }

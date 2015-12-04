@@ -65,7 +65,14 @@ OBJECTS       = main.o \
 		moc_die.o \
 		moc_board.o \
 		moc_artificialintelligence.o
-DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
+DIST          = android/AndroidManifest.xml \
+		android/gradle/wrapper/gradle-wrapper.jar \
+		android/gradlew \
+		android/res/values/libs.xml \
+		android/build.gradle \
+		android/gradle/wrapper/gradle-wrapper.properties \
+		android/gradlew.bat \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/shell-unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/linux.conf \
