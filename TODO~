@@ -1,6 +1,5 @@
 Known Bugs:
- - after a move that makes the game entirely their colour or white the next move is the wrong colour. 
-	- e.g. after removing the AI's blues by rolling over, the next move that should be the AI's is taken by the player and is blue,
+
 
 Fixed Bugs:
  - User becomes blue colour and AI doesn't initialise
@@ -8,3 +7,9 @@ Fixed Bugs:
 	 - the game after this 'game' doesn't suffer the same problem
 	 - the problem then occurs again after a proper game has occured
 
+
+User Interface
+ - it sucks
+	- going to move the options on the right panel into a menu bar I think
+	- add "are you sure?" messages for changing things
+	- Give some indication of when changing the size takes effect

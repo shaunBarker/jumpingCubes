@@ -25,16 +25,11 @@ std::vector<std::vector<int> > artificialIntelligence::findFlippablePoints(){
     for(unsigned int i=0; i<whereIAmPlaying->getSize();i++){
         for(unsigned int j=0; j<whereIAmPlaying->getSize();j++){
 
-            if(whereIAmPlaying->getBoardDie(i,j)->getTeamColour()!=m_aiColour){
+            //don't let the ai play on the opponent's spaces
+            if(whereIAmPlaying->getBoardDie(i,j)->getTeamColour()!=m_aiColour and whereIAmPlaying->getBoardDie(i,j)->getTeamColour()!=Qt::white){
                 flippablePoints[i][j]=flippablePoints[i][j]-5000;
-            }
-            if(whereIAmPlaying->getBoardDie(i,j)->getTeamColour()==QColor(Qt::white)){
-                flippablePoints[i][j]=flippablePoints[i][j]+5001;
-
-            }
-            if(whereIAmPlaying->getBoardDie(i,j)->getTeamColour()==m_aiColour){
-                flippablePoints[i][j]=flippablePoints[i][j]+3;
-
+            } else {
+                flippablePoints[i][j]=flippablePoints[i][j]+6;
             }
             if(whereIAmPlaying->getBoardDie(i,j)->rollOver(whereIAmPlaying->getSize())){
                 flippablePoints[i][j]=flippablePoints[i][j]+6;
