@@ -1,6 +1,7 @@
 Known Bugs:
  - after a move that makes the game entirely their colour or white the next move is the wrong colour. 
 	- e.g. after removing the AI's blues by rolling over, the next move that should be the AI's is taken by the player and is blue,
+	- can't reproduce this problem now, not sure of cause
 
 Fixed Bugs:
  - User becomes blue colour and AI doesn't initialise
