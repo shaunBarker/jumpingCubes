@@ -41,7 +41,7 @@ void MainWindow::on_actionGrid_Size_triggered()
     //QString text = QInputDialog::getText(this,description, request, QLineEdit::Normal);
     int changedValue = QInputDialog::getInt(this,
             description, request, QLineEdit::Normal,arbitraryMinSize,arbitraryMaxSize,1,&ok);
-    if(ok and changedValue>arbitraryMinSize and changedValue<=arbitraryMaxSize){
+    if(ok and changedValue>=arbitraryMinSize and changedValue<=arbitraryMaxSize){
         //int changedValue = text.toInt();
         emit resizeRequest(changedValue);
         emit resetBoard();
