@@ -61,5 +61,14 @@ QPoint artificialIntelligence::findMaxPosition(std::vector<std::vector<int> > ve
             }
         }
     }
-    return(maxPosition);
+    std::vector<QPoint> maxPositionVector;
+    for(unsigned int i=0; i<vectorToSearch.size();i++){
+        for(unsigned int j=0; j<vectorToSearch.size();j++){
+            if(vectorToSearch[i][j]==vectorToSearch[maxPosition.x()][maxPosition.y()]){
+                maxPositionVector.push_back(QPoint(i,j));
+            }
+        }
+    }
+    int randomMaxPosition=rand()% maxPositionVector.size();
+    return(maxPositionVector[randomMaxPosition]);
 }
