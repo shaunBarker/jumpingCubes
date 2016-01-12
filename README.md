@@ -1,0 +1,1 @@
+Jumping Cubes is an old University assignment I had several years ago. The source code is entirely in this git repository. I've compiled and ran this code succesfully on Ubuntu 15.10 and for Android 5.04.
